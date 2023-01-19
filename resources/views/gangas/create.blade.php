@@ -5,9 +5,6 @@
     <h2>Create Post</h2>
 </div>
 <div class="row">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <form action="{{ route('ganga.store') }}" method="post" class="m-5" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">

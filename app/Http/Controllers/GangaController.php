@@ -49,7 +49,7 @@ class GangaController extends Controller
     public function show($id)
     {
         $ganga = Ganga::findOrFail($id);
-        return view('gangas.show',compact('ganga'));
+        return view('gangas.show', compact('ganga'));
     }
 
     public function edit($id)
@@ -63,6 +63,6 @@ class GangaController extends Controller
     public function destroy($id)
     {
         Ganga::findOrFail($id)->delete();
-        return redirect('post');
+        return redirect()->route('ganga.index');
     }
 }
