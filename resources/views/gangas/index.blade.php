@@ -14,8 +14,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{$ganga->title}}</h5>
                 <p class="card-text">{{$ganga->description}}</p>
-                <p>Precio: {{$ganga->price_sale}} €</p>
-                <a href="#" class="btn btn-primary" style="margin-left: 25%;">Ver oferta</a>
+                <del>Precio: {{$ganga->price}} €</del>
+                <p>Ganga: {{$ganga->price_sale}} €</p>
+                <a href="{{route('ganga.show', $ganga->id)}}" class="btn btn-primary" style="margin-left: 25%;">Ver oferta</a>
             </div>
         </div>
     </div>

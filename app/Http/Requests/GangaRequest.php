@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
+
 
 class GangaRequest extends FormRequest
 {
@@ -24,7 +26,21 @@ class GangaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5',
+            'description' => 'required|min:20',
+            'url' => 'required|min:10',
+            'category' => 'required',
+            'price' => 'required',
+            'price_sale' => 'required',
+            'img' => ['required',File::image()],
         ];
     }
+
+    public function messages()
+{
+    return [
+        'required' => 'El campo es obligatorio',
+        'min' => 'El campo no cumple la longitud'
+    ];
+}
 }

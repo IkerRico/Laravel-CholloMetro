@@ -14,9 +14,11 @@
             color: white;
             padding-lef: 10px;
         }
-        .botones > *{
+
+        .botones>* {
             height: 40px;
         }
+
         button>a,
         a:hover {
             text-decoration: none;
@@ -31,20 +33,18 @@
         .navbar {
             background-color: lightslategrey;
             margin: 0;
-            padding: ;
         }
 
         footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
             background-color: lightslategrey;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 40px;
             color: white;
             text-align: center;
-            margin: 0;
-            padding: 0;
         }
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
