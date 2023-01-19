@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
                 <span class="col-1"></span>
                 <button class="col-2 ms-1 mt-1 btn btn-warning text-center"><a href="/">Inicio</a></button>
                 <button class="col-2 ms-1 mt-1 btn btn-warning text-center"><a href="{{route("ganga.index")}}">Llistat</a></button>
-                <button class="col-2 ms-1 mt-1 btn btn-warning text-center"><a href="">Destacados</a></button>
                 @if(Auth::check())
                 <button class="col-2 ms-1 mt-1 btn btn-warning text-center"><a href="{{route("ganga.create")}}">Añadir</a></button>
                 @endif
@@ -41,7 +40,9 @@ use Illuminate\Support\Facades\Auth;
                                 </a>
                                 @endif
                             </a></li>
-                        <li><a class="dropdown-item" href="#">Mis gangas</a></li>
+                        @if(Auth::check())
+                        <li><a class="dropdown-item" href="{{route('ganga.misgangas')}}">Mis gangas</a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>

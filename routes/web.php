@@ -32,3 +32,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/ganga', GangaController::class);
+Route::get('/misgangas', [GangaController::class, 'getUserGangas'])->name('ganga.misgangas');

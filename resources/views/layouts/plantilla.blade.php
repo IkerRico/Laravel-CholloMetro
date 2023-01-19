@@ -11,7 +11,7 @@
         }
 
         div>h2 {
-            color: white;
+            color: black;
             padding-left: 10px;
         }
 

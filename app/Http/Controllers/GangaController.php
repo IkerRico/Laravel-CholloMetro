@@ -16,7 +16,8 @@ class GangaController extends Controller
     public function index()
     {
         $gangas = Ganga::paginate(8);
-        return view('gangas.index', compact('gangas'));
+        $title = '';
+        return view('gangas.index', compact('gangas', 'title'));
     }
 
     public function create()
@@ -64,5 +65,12 @@ class GangaController extends Controller
     {
         Ganga::findOrFail($id)->delete();
         return redirect()->route('ganga.index');
+    }
+
+    public function getUserGangas()
+    {
+        $gangas = Ganga::where('user_id', '=', Auth::user()->id)->paginate(8);
+        $title = 'de ' . ucfirst(Auth::user()->name);
+        return view('gangas.index', compact('gangas','title'));
     }
 }

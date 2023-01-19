@@ -3,7 +3,7 @@
 @section('contenido')
 <div class="row">
     <div class="col-3">
-        <h2>Llistats Post</h2>
+        <h2>Gangas {{$title}}</h2>
     </div>
 </div>
 <div class="row d-flex flex-row ms-5 me-3">
