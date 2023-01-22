@@ -55,10 +55,30 @@ class GangaController extends Controller
 
     public function edit($id)
     {
+        $ganga = Ganga::findOrFail($id);
+        $categories = Category::all();
+        return view('gangas.edit',compact('ganga','categories'));
     }
 
     public function update(GangaRequest $request, $id)
     {
+        $ganga = Ganga::findOrFail($id);
+        $ganga->title = $request->title;
+        $ganga->description = $request->description;
+        $ganga->url = $request->url;
+        $ganga->category_id = $request->category;
+        $ganga->likes = 0;
+        $ganga->unlikes = 0;
+        $ganga->price = $request->price;
+        $ganga->price_sale = $request->price;
+        $ganga->aviable = true;
+        $ganga->user_id = Auth::user()->id;
+        $ganga->save();
+
+        $imagen = $request->file('img');
+        $fileName = $ganga->id . '-ganga-severa.jpg';
+        $imagen->storeAs('/public/img', $fileName);
+        return redirect()->route('ganga.index');
     }
 
     public function destroy($id)
