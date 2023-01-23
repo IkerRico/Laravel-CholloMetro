@@ -67,11 +67,8 @@ class GangaController extends Controller
         $ganga->description = $request->description;
         $ganga->url = $request->url;
         $ganga->category_id = $request->category;
-        $ganga->likes = 0;
-        $ganga->unlikes = 0;
         $ganga->price = $request->price;
-        $ganga->price_sale = $request->price;
-        $ganga->aviable = true;
+        $ganga->price_sale = $request->price_sale;
         $ganga->user_id = Auth::user()->id;
         $ganga->save();
 
